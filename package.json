@@ -3,20 +3,23 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
-    "ssl": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve UNIQUARD --ssl true --ssl-cert ./ssl/server.crt --ssl-key ./ssl/server.key",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
     "@agm/core": "^1.1.0",
+    "@angular-devkit/build-angular": "^0.803.24",
     "@angular/animations": "^8.2.10",
     "@angular/cdk": "^8.2.0",
+    "@angular/cli": "~8.1.2",
     "@angular/common": "~8.1.2",
     "@angular/compiler": "~8.1.2",
+    "@angular/compiler-cli": "~8.1.2",
     "@angular/core": "~8.1.2",
     "@angular/flex-layout": "^8.0.0-beta.27",
     "@angular/forms": "~8.1.2",
@@ -30,6 +33,7 @@
     "@ngrx/store": "^8.3.0",
     "@ngrx/store-devtools": "^8.3.0",
     "angular-media-queries": "^0.6.1",
+    "express": "^4.17.1",
     "geolib": "^3.3.1",
     "hammerjs": "^2.0.8",
     "ng-bootstrap": "^1.6.3",
@@ -41,7 +45,6 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.801.2",
     "@angular/cli": "~8.1.2",
     "@angular/compiler-cli": "~8.1.2",
     "@angular/language-service": "~8.1.2",
