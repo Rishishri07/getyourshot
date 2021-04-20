@@ -34,6 +34,7 @@
 .search-btn {
   background: linear-gradient(to right, #00B2FF, #0066FF);
   margin-left: 1%;
+  width: 35%;
   @media (min-width: 768px) {
     width: 15%;
   }
@@ -130,7 +131,9 @@
 .search-field-cont {
   text-align: center;
  .search-dropdown {
-   width: 30%;
+   @media (min-width: 600px) {
+     width: 30%;
+   }
  }
 }
 
