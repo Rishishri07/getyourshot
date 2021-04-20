@@ -1,0 +1,107 @@
+//@media only screen and (max-width: 600px) {
+//  .uq-sidenav-content {
+//    height: 93vh;
+//  }
+//}
+//@media only screen and (max-width: 1024px) {
+//  .uq-sidenav-content {
+//    height: 92.2vh;
+//  }
+//}
+//@media only screen and (min-width: 1280px) {
+//  /*mat-sidenav-content {
+//    height: 91.4vh;
+//  }*/
+//  .uq-sidenav-content {
+//    height: 91.4vh;
+//  }
+//}
+//@media only screen and (min-width: 1920px) {
+//  .uq-sidenav-content {
+//    height: 91.4vh;
+//  }
+//}
+//mat-sidenav {
+//  width: 14.5em;
+//}
+//
+//.mat-icon-class {
+//  background-color: red;
+//}
+//.menu-title {
+//  text-align: center;
+//  font-weight: bold !important;
+//}
+//.active-list-item {
+//  width: 0;
+//  height: 0;
+//  border-top: 5px solid transparent;
+//  border-bottom: 5px solid transparent;
+//  border-left: 5px solid red;
+//}
+//.mat-list-base {
+//  padding-top: 0 !important;
+//  display: block;
+//  -webkit-tap-highlight-color: transparent;
+//}
+///*::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
+//  visibility: visible !important;
+//}*/
+///*
+//.sidenav-link {
+//  border-radius: 34px;
+//  width: 97%;
+//  height: 44px;
+//}
+//*/
+//
+///*::ng-deep .mat-drawer-content {
+//  position: relative;
+//  z-index: 1;
+//  display: block;
+//  height: 100%;
+//  !*overflow: hidden !important;*!
+//}*/
+//
+//::ng-deep .mat-drawer-inner-container {
+//  /*width: 100%;
+//  height: 100%;*/
+//  overflow: hidden !important;
+//}
+//.dot {
+//  height: 2.5em;
+//  width: 2.5em;
+//  background-color: #bbb;
+//  border-radius: 50%;
+//  display: inline-block;
+//}
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+  height: 100%;
+}
+mat-sidenav {
+  width: 250px;
+}
+main {
+  padding: 2px;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+  padding: 0 4px !important;
+}
+
+.mat-list-base {
+  padding-top: 0 !important;
+}
+
+.mat-list-base .mat-list-item.mat-list-item-with-avatar, .mat-list-base .mat-list-option.mat-list-item-with-avatar {
+  height: 100%;
+}
+.logo-image {
+  height: 90%;
+  width: 6%;
+  background-size: 107% 100%;
+}
+.image-btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+}

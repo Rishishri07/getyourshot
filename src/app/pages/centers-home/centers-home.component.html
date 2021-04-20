@@ -1,0 +1,85 @@
+<div><h1 class="mat-title">Don't miss your shot to stop Covid-19. Find Covid Vaccination Center near you.</h1></div>
+<div class="search-field-cont">
+<mat-form-field class="search-dropdown">
+  <mat-label>State</mat-label>
+  <mat-select [(ngModel)]="selectedState" disableOptionCentering>
+<!--    <input (keyup)="onKey($event.target.value)">-->
+    <mat-form-field class="login-input-field">
+      <mat-label>Filter states</mat-label>
+      <input matInput placeholder="Filter states"
+             (keyup)="onKey($event.target.value)"
+             name="state"
+             minlength="6" autofocus="autofocus">
+    </mat-form-field>
+    <mat-option *ngFor="let state of selectedStates; let i = index" [value]="state">{{state | removeUnderscore}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<button mat-raised-button class="search-btn" color="primary"
+        (click)="searchCenters()"
+        [disabled]="!selectedState"
+>Search</button>
+</div>
+<div class="filter-container" [hidden]="!dataSource">
+  <mat-form-field style="width: 46%" appearance="outline">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  <mat-error *ngIf="showErr">No Result Found!</mat-error>
+</div>
+<div class="example-container mat-elevation-z8" [hidden]="!dataSource">
+
+  <mat-table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+    <ng-container matColumnDef="Hospital Name">
+      <mat-header-cell *matHeaderCellDef> Hospital Name </mat-header-cell>
+      <mat-cell *matCellDef="let row; let i = index" data-label="Hospital Name"
+      (click)="openGoogleMap(row.latitude, row.longitude)"> <p class="title">{{row.vaccineSite}}
+        <sup class="info-text">{{row.distance | number : '1.0-0'}} KM</sup></p> </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Category">
+      <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="Category"> <p class="title">{{row.category}}</p> </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Center Type">
+      <mat-header-cell *matHeaderCellDef> Center Type </mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="Center Type"> <p class="title">{{row.centerType}}</p> </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="District">
+      <mat-header-cell *matHeaderCellDef> District </mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="District"> <p class="title"> {{row.district}}</p> </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Pincode">
+      <mat-header-cell *matHeaderCellDef> Pincode </mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="Pincode"> <p class="title">{{row.pinCode}} </p></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="State">
+      <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="State"> <p class="title">{{row.state | removeUnderscore}}</p> </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="expandedDetail">
+      <mat-cell *matCellDef="let detail">
+        The symbol for {{detail.element.name}} is {{detail.element.symbol}}
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"
+             matRipple
+             class="element-row"
+             [class.expanded]="expandedElement == row"
+             (click)="expandedElement === row? expandedElement = null : expandedElement = row"></mat-row>
+    <mat-row *matRowDef="let row; columns: ['expandedDetail']; when: isExpansionDetailRow"
+             [@detailExpand]="row.element == expandedElement ? 'expanded' : 'collapsed'"
+             style="overflow: hidden">
+    </mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+</div>
+<app-progress-spinner class="example-margin" [color]="'primary'" [mode]="'indeterminate'" [backdropEnabled]="true" [positionGloballyCenter]="true"
+                     [displayProgressSpinner]="loading">
+</app-progress-spinner>

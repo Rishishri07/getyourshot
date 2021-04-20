@@ -1,0 +1,51 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style="background: linear-gradient(to right, #00B2FF, #1569e7);">
+      <div class="logo-image image-btn" (click)="router.navigate(['/vaccination-centers'])"
+              [style.backgroundImage]="'url(assets/getyourshot_logo.jpg)'">
+      </div>
+      <div fxFlex fxLayout fxLayoutAlign="start" style="height: 100%; margin-left: 1%;">
+        <mat-nav-list style="height: 100%;">
+          <mat-list-item class="sidenav-link" [routerLink]="['/vaccination-centers']" routerLinkActive="active-list-item">
+            <mat-icon mat-list-icon>home</mat-icon>
+            <h4 mat-line class="menu-title">Home</h4>
+          </mat-list-item>
+<!--          <mat-list-item class="sidenav-link" [routerLink]="['/donors/home']" routerLinkActive="active-list-item">-->
+<!--            <mat-icon mat-list-icon>build</mat-icon>-->
+<!--            <h4 class="menu-title" mat-line>Uniquard Setup</h4>-->
+<!--          </mat-list-item>-->
+          <!--      <mat-list-item class="sidenav-link" [routerLink]="['business/setup']" routerLinkActive="active-list-item">-->
+          <!--        <mat-icon mat-list-icon>group_add</mat-icon>-->
+          <!--        <h4 mat-line class="menu-title" *ngIf="isExpanded">Business Setup</h4>-->
+          <!--      </mat-list-item>-->
+          <!--      <mat-list-item class="sidenav-link" [routerLink]="['franchise/setup']" routerLinkActive="active-list-item">-->
+          <!--        <mat-icon mat-list-icon>storefront</mat-icon>-->
+          <!--        <h4 mat-line class="menu-title" *ngIf="isExpanded">Franchise Setup</h4>-->
+          <!--      </mat-list-item>-->
+
+          <!--      <mat-list-item class="sidenav-link" [routerLink]="['user/home2']" routerLinkActive="active-list-item"-->
+          <!--                     (click)="drawer.toggle()">-->
+          <!--        <mat-icon mat-list-icon>people</mat-icon>-->
+          <!--        <h4 mat-line class="menu-title" *ngIf="isExpanded">Staff Setup</h4>-->
+          <!--      </mat-list-item>-->
+          <!--      <mat-list-item class="sidenav-link" [routerLink]="['user/home3']" routerLinkActive="active-list-item"-->
+          <!--                     (click)="drawer.toggle()">-->
+          <!--        <mat-icon mat-list-icon>restaurant_menu</mat-icon>-->
+          <!--        <h4 mat-line class="menu-title" *ngIf="isExpanded">Menu Setup</h4>-->
+          <!--      </mat-list-item>-->
+          <!--      <mat-list-item class="sidenav-link" [routerLink]="['user/home4']" routerLinkActive="active-list-item"-->
+          <!--                     (click)="drawer.toggle()">-->
+          <!--        <mat-icon mat-list-icon>report</mat-icon>-->
+          <!--        <h4 mat-line class="menu-title" *ngIf="isExpanded">Report</h4>-->
+          <!--      </mat-list-item>-->
+        </mat-nav-list>
+      </div>
+    </mat-toolbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

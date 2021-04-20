@@ -1,0 +1,9 @@
+{
+  "/getcenterbystate/*": {
+    "target": "https://getyourshot.herokuapp.com",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {"^/getcenterbystate": ""},
+    "logLevel": "debug"
+  }
+}

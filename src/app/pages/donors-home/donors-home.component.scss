@@ -1,0 +1,23 @@
+.user-info-container {
+  float: right;
+ /* border: 1.5px solid red;*/
+  height: 7%;
+  width: 100%;
+  display: block;
+}
+.user-info {
+  float: right;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 1%
+}
+
+.divider {
+  width: 100%;
+  display: block;
+  border-top-width: 1px;
+}
+
+.user-name-container {
+  height: 74%;
+}
